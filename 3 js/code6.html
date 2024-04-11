@@ -3,26 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Telephone Number Parser</title>
 </head>
-<style>
-    body {
-      background-image: url('./painting-mountain-lake-with-mountain-background_188544-9126.avif');
-      background-attachment: fixed;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    h1{
-        height: 100vh;
-    }
-  </style>
 <body>
-        <h1>
-            This is a background image
-        </h1>
+    <h2>Telephone Number Parser
+        <h2>Telephone Number Parser</h2>
 
-        <p>
-            This is a paragraph
-        </p>
-</body>
-</html>
+        <label for="phoneNumber">Enter phone number (format: (555)555-5555):</label>
+        <input type="text" id="phoneNumber" placeholder="(555)555-5555" />
+        
+        <button onclick="parsePhoneNumber()">Parse Number</button>
+        
+        <label for="areaCode">Area Code:</label>
+        <input type="text" id="areaCode" placeholder="Area Code" readonly />
+        
+        <label for="lastFourDigits">Last Four Digits:</label>
+        <input type="text" id="lastFourDigits" placeholder="Last 4 Digits" readonly />
+        
+        <script>
+            function parsePhoneNumber() {
+                var input = document.getElementById('phoneNumber').value;
+                
+                // Validate the input to match the format
+                var phonePattern = /^\(\d{3}\)\d{3}-\d{4}$/;
+                if (!phonePattern.test(input)) {
+                    alert('Please enter a valid phone number in the format (555)555-5555.');
+                    return;
+                }
+        
+                // Extract the area code and last four digits using split and substring
+                var areaCode = input.substring(1,4);
+                var lastFourDigits = input.split('-')[1];
+        
+                // Display the extracted parts in their respective fields
+                document.getElementById('areaCode').value = areaCode;
+                document.getElementById('lastFourDigits').value = lastFourDigits;
+            }
+        </script>
+        
+        </body>
+        </html>
+        

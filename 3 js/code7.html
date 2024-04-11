@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Image Hover Effect</title>
 </head>
 <body>
-    	<iframe title="Yotubevideo" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen frameborder="0" >
-         
+    <img id="image" src="/2 css/painting-mountain-lake-with-mountain-background_188544-9126.avif" alt="Your Image">
 
-  
+    <script>
+        var image = document.getElementById('image');
+
+        image.addEventListener('mouseover', function() {
+            image.style.filter = "invert(100%)";
+        });
+
+        image.addEventListener('mouseout', function() {
+            image.style.filter = "";
+        });
+    </script>
 </body>
 </html>

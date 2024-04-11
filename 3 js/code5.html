@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-
-<title>transition</title>
-</head>
-<style>
-    .transition {
-      transition: all 0.5s ease;
-    }
-    .transition:hover {
-      background-color: #f00;
-      color: #fff;
-    }
-  </style>
-<body>
+    <meta charset="UTF-8">
+    <title>Find Day of Birth</title>
     
-      
-      <div class="transition">
-        <h2>Hover over me!</h2>
-        <p>Hover over me to see the transition effect.</p>
-      </div>
-      
+</head>
+<body>
+    <h1>What day were you born on?</h1>
+    <label for="birthdate">Enter your birth date:</label>
+    <input type="date" id="birthdate" required>
+    <button onclick="displayDay()">Find Day</button>
+
+    <script>
+        function displayDay() {
+            const birthdate = document.getElementById('birthdate').value;
+            if (birthdate) {
+                const date = new Date(birthdate);
+                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                const day = days[date.getDay()];
+                alert('You were born on a ' + day + '!');
+            } else {
+                alert('Please enter a valid date.');
+            }
+        }
+    </script>
 </body>
 </html>
