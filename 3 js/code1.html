@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Credit Card Validator</title>
+
+</head>
+<body>
+
+<h2>Credit Card Validator</h2>
+
+<form id="cardForm">
+  <label for="cardNumber">Enter your credit card number:</label><br>
+  <input type="text" id="cardNumber" name="cardNumber" required><br>
+  <input type="submit" value="Validate">
+</form>
+
+<p id="validationResult"></p>
+
+<script>
+// Add your JavaScript here
+document.getElementById('cardForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  var cardNumber = document.getElementById('cardNumber').value;
+  validateCreditCard(cardNumber);
+});
+
+function validateCreditCard(number) {
+  var cardType = null;
+  var validLengths = [];
+
+  if (/^5[1-5]/.test(number)) {
+    cardType = 'Master Card';
+    validLengths = [16];
+  } else if (/^4/.test(number)) {
+    cardType = 'Visa';
+    validLengths = [13, 16];
+  } else if (/^(34|37)/.test(number)) {
+    cardType = 'American Express';
+    validLengths = [15];
+  }
+
+  var isValidLength = false;
+for (var i = 0; i < validLengths.length; i++) {
+    if (validLengths[i] === number.length) {
+        isValidLength = true;
+        break;
+    }
+}
+var validationResult = document.getElementById('validationResult');
+  
+
+  if (cardType && isValidLength) {
+    validationResult.innerHTML = `Valid ${cardType} number.`;
+  } else {
+    validationResult.innerHTML = 'Invalid credit card number.';
+  }
+}
+</script>
+
+</body>
+</html>
