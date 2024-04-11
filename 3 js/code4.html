@@ -1,29 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Map Example</title>
-</head>
-<style>
-    .newspaper {
-      column-count: 3; 
-      column-gap: 32px;
-    }
-  </style>
-<body>
-   
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dynamic Text Size</title>
+      <style>
+          body {
+              display: flex;
+              height: 100vh;
+              justify-content: center;
+              align-items: center;
+              margin: 0;
+              background-color: #282c34; /* Dark background for better visibility of white text */
+          }
+          h1 {
+              color: white;
+              text-align: center;
+              transition: font-size 1s; /* Smooth transition for font size changes */
+          }
+      </style>
+  </head>
+  <body>
+      <h1 id="dynamicText">Welcome! Watch the text size change every minute.</h1>
+  
+      <script>
+        function changeTextSize() {
+          // Define an array of font sizes
+          const sizes = ['16px', '24px', '32px', '40px', '48px'];
+          // Generate a random index to pick a size from the array
+          const randomIndex = Math.floor(Math.random() * sizes.length);
+          // Get the text element
+          const textElement = document.getElementById('dynamicText');
+          // Set a new random font size from the array
+          textElement.style.fontSize = sizes[randomIndex];
+      }
       
-      <div class="newspaper">
-       <div>image</div>
-       <div>image</div>
-       <div>image</div>
-       <div>image</div>
-       <div>image</div>
-       <div>image</div>
-      </div>
+      // Call the function initially to set the first font size
+      changeTextSize();
+      
+      // Set the function to run every minute (60000 milliseconds)
+      setInterval(changeTextSize, 600);
+      
+      </script>
+  </body>
+  </html>
+  
       
 
-
-</body>
-</html>
