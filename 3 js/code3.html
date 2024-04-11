@@ -1,20 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>	
-		<meta charset="UTF-8">
-		<meta name="viewport" content="device-width" scale="1.0">
-		<title>Rounded Corner</title>
-	</head>
-	<style>
-		/* Rounded Corner */
-		.round {
-			width: 200px;
-			height: 200px;
-			background-color: #8d2c2c;
-			border-radius: 25px;
-		}
-	</style>
-	<body>
-		<div class="round"></div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="device-width" scale="1.0" />
+    <title>Rounded Corner</title>
+  </head>
+  
+  <body>
+	
+
+
+
+    <script>
+      // Function to get the current hour and display a greeting based on the time
+	  var greeting;
+      function greetUser() {
+        const now = new Date(); // Create a new Date object
+        const hour = now.getHours(); // Get the current hour (0-23)
+		//other way to get the current hour
+		
+
+
+
+        if (hour < 6) {
+          greeting = "Why are you up so early? Good morning!";
+        } else if (hour < 12) {
+          greeting = "Good morning!";
+        } else if (hour < 18) {
+          greeting = "Good afternoon!";
+        } else if (hour < 22) {
+          greeting = "Good evening!";
+        } else {
+          greeting = "It's late! Good night!";
+        }
+
+        console.log(greeting); // Output the greeting to the console
+      }
+      // Call the function to display the greeting
+      greetUser();
+      // Optionally, if you want to run this in a web environment and display the greeting in the browser:
+document.body.innerHTML = `<h1>${greeting}</h1>`; // This will write the greeting to the body of your HTML
+    </script>
+  </body>
 </html>
