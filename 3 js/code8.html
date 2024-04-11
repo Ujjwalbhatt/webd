@@ -1,55 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <form action="/abc.html">
-      <fieldset>
-        <legend>Basic Information</legend>
-        <label for="name">Full Name: </label>
-        <input type="text" name="Name" id="name" /> <br /><br />
-        <label for="date">Birth date: </label>
-        <input type="date" name="date" id="date" /> <br /><br />
-        <label for="gender">Gender: </label>
-        <label>
-          <input type="radio" name="gender" id="gender" value="male" />
-          Male
-        </label>
-        <label>
-          <input type="radio" name="gender" id="gender" value="female" />
-          Female </label
-        ><br /><br />
-        <label for="address">Address: </label>
-        <input type="address" name="date" id="address" /> <br /><br />
-        <label for="phoneno">Phone: </label>
-        <input type="tel" name="phone" id="phoneno" /> <br /><br />
-      </fieldset>
-      <br />
-      <fieldset>
-        <legend>Extra Information</legend>
+<html>
+<head>
+<title>Scrolling Text</title>
+<script language="JavaScript">
+var scrollPos = 0
+var maxScroll = 100
+var blanks = ""
 
-        <label for="interest">Interest: </label>
-        <label>
-          <input type="checkbox" name="interest" id="interest" value="male" />
-          Books
-        </label>
-        <label>
-          <input type="checkbox" name="interest" id="interest" value="female" />
-          Movies
-        </label>
-        <label>
-          <input type="checkbox" name="interest" id="interest" value="female" />
-          Movies </label
-        ><br /><br />
-        <label for="color">Favourite color: </label>
-        <input type="color" name="color" id="color" />
-      </fieldset>
-      <br />
-      <button type="submit">Send data</button>
-      <button type="reset">Reset data</button>
-    </form>
-  </body>
+function scrollText(text, milliseconds) {
+   window.setInterval("displayText('"+text+"')", milliseconds)
+}
+
+function displayText(text) {
+     window.defaultStatus = blanks + text
+     ++scrollPos
+     blanks += " "
+     if(scrollPos > maxScroll) {
+        scrollPos = 0
+        blanks = ""
+     }
+}
+</script>
+</head>
+<body onload="scrollText('Watch this text scroll!!!', 300)">
+<p>Watch the text scroll at the bottom of this window!</p>
+</body>
 </html>
