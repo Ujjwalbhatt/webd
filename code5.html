@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Webpage with Frames</title>
+</head>
+<frameset rows="20%,80%" frameborder="yes" border="5" framespacing="0">
+    <frame src="top_frame.html" name="topFrame" scrolling="no" noresize>
+    <frameset cols="25%,*">
+        <frame src="navigation.html" name="navigationFrame">
+        <frameset rows="*,30%">
+            <frame src="main.html" name="mainFrame">
+            <frame src="contact.html" name="contactFrame">
+        </frameset>
+    </frameset>
+</frameset>
+</html>
