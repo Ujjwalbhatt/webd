@@ -1,0 +1,33 @@
+<!-- Html code to take system time and stop it using the stop interval -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display and Start/Stop System Time</title>
+    <script>
+        var interval; // Declare interval outside so it's accessible by both start and stop functions
+
+        function startTimer() {
+            var display = document.getElementById('time');
+            // Clear any existing intervals to prevent multiple timers
+            clearInterval(interval); 
+            // Update the time every second
+            interval = setInterval(function() {
+                var now = new Date();
+                display.innerHTML = now.toLocaleTimeString(); // Format the time as a string
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(interval);
+        }
+
+        // Call startTimer when the body loads to start the timer initially
+        window.onload = startTimer;
+    </script>
+</head>
+<body>
+    <div id="time"></div>
+    <button onclick="stopTimer()">Stop Time</button>
+    <button onclick="startTimer()">Start Time</button>
+</body>
+</html>
