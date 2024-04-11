@@ -1,55 +1,28 @@
+<!-- Create a web page to resize the background of web page -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <form action="/abc.html">
-      <fieldset>
-        <legend>Basic Information</legend>
-        <label for="name">Full Name: </label>
-        <input type="text" name="Name" id="name" /> <br /><br />
-        <label for="date">Birth date: </label>
-        <input type="date" name="date" id="date" /> <br /><br />
-        <label for="gender">Gender: </label>
-        <label>
-          <input type="radio" name="gender" id="gender" value="male" />
-          Male
-        </label>
-        <label>
-          <input type="radio" name="gender" id="gender" value="female" />
-          Female </label
-        ><br /><br />
-        <label for="address">Address: </label>
-        <input type="address" name="date" id="address" /> <br /><br />
-        <label for="phoneno">Phone: </label>
-        <input type="tel" name="phone" id="phoneno" /> <br /><br />
-      </fieldset>
-      <br />
-      <fieldset>
-        <legend>Extra Information</legend>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    background-image: url('./painting-mountain-lake-with-mountain-background_188544-9126.avif');
+    background-size: 100% 100%;
+  }
+  h1{
+    height: 100vh;
+  }
+</style>
+<body>
+  <h1>
+    This is a background image
+  </h1>
 
-        <label for="interest">Interest: </label>
-        <label>
-          <input type="checkbox" name="interest" id="interest" value="male" />
-          Books
-        </label>
-        <label>
-          <input type="checkbox" name="interest" id="interest" value="female" />
-          Movies
-        </label>
-        <label>
-          <input type="checkbox" name="interest" id="interest" value="female" />
-          Movies </label
-        ><br /><br />
-        <label for="color">Favourite color: </label>
-        <input type="color" name="color" id="color" />
-      </fieldset>
-      <br />
-      <button type="submit">Send data</button>
-      <button type="reset">Reset data</button>
-    </form>
-  </body>
+  <p>
+    This is a paragraph
+  </p>
+  
+</body>
 </html>
