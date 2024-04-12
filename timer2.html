@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Countdown Timer</title>
+<script>
+function startTimer(duration, display) {
+    console.log(typeof(duration));
+    var timer = duration, minutes, seconds;
+    var interval = setInterval(function () {
+        minutes = Math.floor(timer/60); // Divide the total seconds by 60 to get the minutes
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            clearInterval(interval);
+            alert("Time's up!");
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var twoMinutes = 60 * 2,
+    display = document.querySelector('#time');
+    console.log(typeof(twoMinutes));
+    startTimer(twoMinutes, display);
+};
+</script>
+</head>
+<body>
+<h1>Countdown Timer</h1>
+<div id="time" style="font-size: 48px;"></div>
+</body>
+</html>

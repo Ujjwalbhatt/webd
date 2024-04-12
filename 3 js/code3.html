@@ -37,7 +37,7 @@
         console.log(greeting); // Output the greeting to the console
       }
       // Call the function to display the greeting
-      greetUser();
+      setInterval(greetUser(),3600000);
       // Optionally, if you want to run this in a web environment and display the greeting in the browser:
 document.body.innerHTML = `<h1>${greeting}</h1>`; // This will write the greeting to the body of your HTML
     </script>
