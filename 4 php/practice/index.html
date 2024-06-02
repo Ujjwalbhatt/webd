@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Information Entry</title>
+</head>
+<body>
+    <h1>Enter Book Information</h1>
+    <form action="insert.php" method="POST">
+        <label for="accession_number">Accession Number:</label><br>
+        <input type="text" id="accession_number" name="accession_number" required><br>
+        
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br>
+        
+        <label for="authors">Authors:</label><br>
+        <input type="text" id="authors" name="authors" required><br>
+        
+        <label for="edition">Edition:</label><br>
+        <input type="text" id="edition" name="edition" required><br>
+        
+        <label for="publisher">Publisher:</label><br>
+        <input type="text" id="publisher" name="publisher" required><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <h1>Search Book by Title</h1>
+    <form action="search.php" method="GET">
+        <label for="search_title">Title:</label><br>
+        <input type="text" id="search_title" name="search_title" required><br>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>

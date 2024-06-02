@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .counter-wrapper{
+        display: flex;
+        gap: 4px;
+    }
+    #plus{
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+    }
+    #minus{
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+    }
+</style>
+<body>
+            <h1>Basic Counter</h1>
+            <div class="counter-wrapper">
+                <button id="minus">-</button>
+                <input type="number" id="number" readonly value="0">
+                <button id="plus">+</button>
+            </div>
+            <script>
+                    var minus = document.getElementById('minus');
+                    var plus = document.getElementById('plus');
+                    var number = document.getElementById('number');
+                    var counter = 0;
+                    plus.addEventListener('click',()=>{
+                        counter++;
+                        number.value= counter;
+                    });
+                    minus.addEventListener('click',()=>{
+                        if(counter>0){
+                            counter--;
+                            number.value= counter;
+                        }
+                    });
+            </script>
+</body>
+</html>

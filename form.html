@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" action="abc.php">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name"> <br><br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>  <br> <br>  
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById('form').addEventListener('submit', (event)=>{
+            let email = document.getElementById('email').value;
+            let name = document.getElementById('name').value;
+            if(!isvalidName(name)){
+                event.preventDefault();
+                alert("Enter the valid name!")
+            }
+            if(!isvalidEmail(email)){
+                event.preventDefault();
+                alert("Invalid Email Address!!!");
+            }
+        });
+        function isvalidEmail(email){
+             let regex = /^[a-zA-Z0-9\._\-]*[@][a-zA-Z]*[\.][a-z]{2,4}$/;
+              return regex.test(email);
+        }
+        function isvalidName(name){
+             let regex = /^[a-zA-Z\s]{6,}$/;
+              return regex.test(name);
+        }
+
+    </script>
+</body>
+</html>

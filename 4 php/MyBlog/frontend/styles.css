@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    min-height: 100vh;
+}
+header {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container{
+    width: 100%;
+    max-width: 75rem;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+    height: 100%;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav .button {
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav .button:hover {
+    background-color: #1c1b1b;
+    
+}
+
+
+
+footer {
+    background-color: #000000;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    
+    width: 100%;
+}
+
+p {
+    margin: 20px 0; 
+}
+
+
+a {
+    display: inline-block;
+    margin: 10px 0;
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label, input, textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    width: auto;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.post {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}

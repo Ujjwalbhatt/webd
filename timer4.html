@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #timer {
+            font-size: 48px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer">10:00</div> <!-- Initial time set to 10 minutes -->
+    <button id="start">Start Timer</button>
+    <button id="stop">Stop Timer</button>
+    <script>
+        let totalSeconds = 10 * 60; // Total time in seconds (10 minutes)
+            let interval;
+        function startTimer() {
+            const timerElement = document.getElementById('timer');
+            
+             interval = setInterval(() => {
+                // Calculate minutes and seconds
+                let minutes = Math.floor(totalSeconds / 60);
+                let seconds = totalSeconds % 60;
+
+                // Format minutes and seconds to ensure they are always two digits
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                // Update the timer display
+                timerElement.textContent = `${minutes}:${seconds}`;
+
+                // Decrease total seconds by 1
+                totalSeconds--;
+
+                // Check if the timer has reached 0
+                if (totalSeconds < 0) {
+                    clearInterval(interval);
+                    timerElement.textContent = "Time's Up!";
+                }
+            }, 1000); // Update the timer every second (1000ms)
+        }
+        document.getElementById('start').addEventListener('click', (event)=>{
+            startTimer();
+        })
+         document.getElementById('stop').addEventListener('click', (event)=>{
+            clearInterval(interval);
+        })
+        // Start the timer when the page loads
+        
+    </script>
+</body>
+</html>

@@ -17,9 +17,14 @@ const ToDoList = () => {
   };
 
   const toggleTaskCompletion = (index) => {
-    const newTasks = tasks.map((task, i) => 
+    const newTasks = tasks.map((task, i) =>
       i === index ? { ...task, completed: !task.completed } : task
     );
+    setTasks(newTasks);
+  };
+
+  const deleteTask = (index) => {
+    const newTasks = tasks.filter((_, i) => i !== index);
     setTasks(newTasks);
   };
 
@@ -35,15 +40,18 @@ const ToDoList = () => {
         />
         <button onClick={addTask}>Add</button>
       </div>
-      <ul>
+      <ul className="todo-list">
         {tasks.map((task, index) => (
-          <li key={index} className={task.completed ? "completed" : ""}>
+          <li key={index} className={`todolist-card ${task.completed ? "completed" : ""}`}>
+            <div>
             <input
               type="checkbox"
               checked={task.completed}
               onChange={() => toggleTaskCompletion(index)}
-            />
+              />
             {task.text}
+            </div>
+            <button onClick={() => deleteTask(index)} className="delete-task-button">Delete</button>
           </li>
         ))}
       </ul>
