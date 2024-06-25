@@ -16,11 +16,9 @@
                 display.innerHTML = now.toLocaleTimeString(); // Format the time as a string
             }, 1000);
         }
-
         function stopTimer() {
             clearInterval(interval);
         }
-
         // Call startTimer when the body loads to start the timer initially
         window.onload = startTimer;
     </script>

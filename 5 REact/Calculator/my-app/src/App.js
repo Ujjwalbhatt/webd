@@ -2,13 +2,14 @@ import './App.css';
 import React,{useState} from 'react';
 function App() {
   const [input,setInput] = useState('');
-  const [result,setResult]=useState('');
   const handleclick = (value) =>{
-    setInput((prevInput)=>prevInput+value);
+    setInput(input+value);
   };
   const clearInput = () =>{
     setInput('');
-    setResult('');
+  };
+  const deleteInput = () =>{
+    setInput(input.slice(0,-1));
   };
   const Calculate = () =>{
      try{
@@ -34,10 +35,11 @@ function App() {
           <button onClick={()=>handleclick('8')}>8</button>
           <button onClick={()=>handleclick('9')}>9</button>
           <button onClick={()=>handleclick('0')}>0</button>
-          <button className='orange' onClick={()=>handleclick('*')}>x</button>
+          <button className='orange' onClick={()=>handleclick('*')}>*</button>
           <button className='orange' onClick={()=>handleclick('+')}>+</button>
           <button className='orange' onClick={()=>handleclick('-')}>-</button>
           <button className='orange' onClick={()=>handleclick('/')}>/</button>
+          <button className='orange' onClick={()=>deleteInput()}>x</button>
           <button className='orange' onClick={()=>clearInput()}>C</button>
           <button className='orange is-bg' onClick={()=>Calculate()}>=</button>
       </div>
